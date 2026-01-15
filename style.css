@@ -1,0 +1,393 @@
+/* ============================
+   GLOBAL RESET
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ============================
+   BODY
+============================ */
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #f4f6f9;
+  color: #333;
+  overflow-x: hidden;
+  overflow-y: auto; /* agar halaman lain tetap bisa scroll */
+}
+
+/* ============================
+   NAVBAR
+============================ */
+.navbar {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  background: linear-gradient(90deg, #003366, #00509e);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #ffd60a;
+}
+
+/* ============================
+   DROPDOWN
+============================ */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #fff;
+  min-width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 15px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ======================
+   DASHBOARD POWER BI
+====================== */
+
+/* LAYOUT */
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #003366, #004b8d);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER SIDEBAR */
+.sidebar-header {
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.sidebar-header img {
+  width: 48px;
+}
+
+.sidebar-header span {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* MENU */
+.sidebar-menu {
+  padding: 20px 10px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  margin-bottom: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.sidebar-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-menu a.active {
+  background-color: rgba(255,255,255,0.30);
+  font-weight: 600;
+}
+
+.content {
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* IFRAME */
+.dashboard-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* ============================
+   HERO SECTION PREMIUM
+============================ */
+.hero-section {
+  width: 100%;
+  padding: 80px 20px;
+  background: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #0a1f33;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 35px;
+}
+
+/* Tombol */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #ffc107;
+  color: #000;
+  padding: 14px 35px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+  background: #ffdd57;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #003366;
+  padding: 14px 35px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #003366;
+}
+
+.btn-secondary:hover {
+  background: #e8f1ff;
+}
+
+.navbar .logo img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+/* ======================
+   LOGIN PAGE STYLE
+====================== */
+
+/* BACKGROUND */
+.login-bg {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/146/2025/06/30/KKP-09-1108072007-2134755240.jpg")
+    no-repeat center center / cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BOX LOGIN */
+.login-box {
+  width: 420px;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+  text-align: center;
+}
+
+/* JUDUL */
+.login-box h2 {
+  margin-bottom: 25px;
+  color: #1e3c72;
+}
+
+/* INPUT */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* BUTTON */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #1e3c72;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #16305c;
+}
+
+/* ======================
+   Peta Jabatan
+====================== */
+
+.content-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.content-header h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: #003366;
+}
+
+.content-header p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* BOX KONTEN */
+.content-box {
+  padding: 32px;
+}
+
+.content-box img {
+  width: 100%;
+  max-width: 1100px;
+  display: block;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ======================
+   FOOTER MARQUEE FIX
+====================== */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  width: 100%;
+  background: #003366;
+  color: #ffd60a;
+  overflow: hidden;
+  padding: 12px 0;
+  margin-top: auto;
+}
+
+
+/* container */
+.footer-marquee {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* teks berjalan */
+.footer-marquee span {
+  display: inline-block;
+  color: #ffd60a;
+  font-size: 15px;
+  font-weight: 500;
+  padding-left: 100%;
+  animation: footerSlide 13s linear infinite;
+}
+
+/* animasi */
+@keyframes footerSlide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
