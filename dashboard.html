@@ -7,19 +7,50 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="dashboard-page">
+<body>
 
+  <script>
+  if (localStorage.getItem("isLogin") !== "true") {
+    window.location.href = "login.html";
+  }
+  </script>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="https://pkpj.ac.id/wp-content/uploads/2023/10/kkp.png" alt="Logo KKP">
+      <span>Portal Pegawai KKP</span>
+    </div>
+
+    <nav class="sidebar-menu">
+      <a href="index.html">
+        <span>Beranda</span>
+      </a>
+
+      <a href="dashboard.html" class="active">
+        <span>Dashboard</span>
+      </a>
+
+      <a href="petajabatan.html">
+        <span>Peta Jabatan</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- KONTEN -->
+  <main class="content">
   <iframe
     class="dashboard-frame"
-    src="https://app.powerbi.com/view?r=eyJrIjoiM2U2YTU3MmItZGVlZi00MGM1LTkzMTEtMTBiMzg0OGVhOWQwIiwidCI6IjI5ZTVlYTIwLWRhYWEtNDI5MS1hMmFlLTg3NGU2M2MxZjI5MiIsImMiOjEwfQ%3D%3D
-    &chromeless=true
-    &navContentPaneEnabled=false
-    &filterPaneEnabled=false"
-    frameborder="0"
+    src="https://app.powerbi.com/view?r=eyJrIjoiM2U2YTU3MmItZGVlZi00MGM1LTkzMTEtMTBiMzg0OGVhOWQwIiwidCI6IjI5ZTVlYTIwLWRhYWEtNDI5MS1hMmFlLTg3NGU2M2MxZjI5MiIsImMiOjEwfQ%3D%3D&chromeless=true&navContentPaneEnabled=false&filterPaneEnabled=false"
     allowfullscreen>
   </iframe>
+</main>
+</div>
 
 </body>
 </html>
+
 
 
