@@ -4,13 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal Pegawai KKP</title>
-  <link rel="stylesheet" href="css/style.css">
 
-  <!-- Font Premium -->
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+<!-- =============================== -->
+<!-- CEK LOGIN -->
+<!-- =============================== -->
+<script>
+  if (localStorage.getItem("isLogin") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
 
 <!-- =============================== -->
 <!-- NAVBAR -->
@@ -22,9 +30,9 @@
   </div>
 
   <nav>
-    <a href="login.html">Login</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="petajabatan.html">Peta Jabatan</a>
+    <a href="#" onclick="logout()">Logout</a>
   </nav>
 </header>
 
@@ -32,7 +40,6 @@
 <!-- HERO SECTION -->
 <!-- =============================== -->
 <section class="hero-section">
-
   <div class="hero-content">
     <h1 class="hero-title">Selamat Datang di Portal Pegawai KKP</h1>
     <p class="hero-subtitle">
@@ -40,21 +47,32 @@
     </p>
 
     <div class="hero-buttons">
-      <a class="btn-primary" href="login.html">Login Admin</a>
       <a class="btn-secondary" href="dashboard.html">Dashboard</a>
       <a class="btn-secondary" href="petajabatan.html">Peta Jabatan</a>
     </div>
   </div>
-
 </section>
 
 <!-- =============================== -->
 <!-- FOOTER -->
 <!-- =============================== -->
 <footer class="footer">
-  © 2026 Kementerian Kelautan dan Perikanan — Portal Pegawai
+  <div class="footer-marquee">
+    <span>© 2026 Kementerian Kelautan dan Perikanan — Portal Pegawai</span>
+  </div>
 </footer>
+
+<!-- =============================== -->
+<!-- LOGOUT -->
+<!-- =============================== -->
+<script>
+  function logout() {
+    localStorage.clear();
+    window.location.href = "login.html";
+  }
+</script>
 
 </body>
 </html>
+
 
