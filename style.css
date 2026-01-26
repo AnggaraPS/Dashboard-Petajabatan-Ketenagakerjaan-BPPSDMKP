@@ -391,3 +391,37 @@ body {
   }
 }
 
+/* ======================
+   Register
+====================== */
+
+.register-link {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #003366;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box span {
+  position: absolute;
+  right: 12px;
+  top: 45%;              /* ⬅️ naik dikit */
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;       /* opsional biar proporsional */
+}
+
