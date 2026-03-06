@@ -3,24 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Pegawai KKP</title>
-  <link rel="stylesheet" href="style.css">
-
+  <title>Dashboard Portal TUBEL dan Ketenagakerjaan</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <script>
+<script>
   if (localStorage.getItem("isLogin") !== "true") {
     window.location.href = "login.html";
   }
-  </script>
+</script>
+
+<!-- AREA SENSOR KIRI -->
+<div class="sidebar-trigger"></div>
 
 <div class="layout">
 
   <!-- SIDEBAR -->
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
+      <button id="toggleBtn" style="background:none;border:none;color:white;font-size:22px;cursor:pointer;margin-right:10px;">☰</button>
       <img src="https://pkpj.ac.id/wp-content/uploads/2023/10/kkp.png" alt="Logo KKP">
       <span>Portal Pegawai KKP</span>
     </div>
@@ -42,18 +45,46 @@
 
   <!-- KONTEN -->
   <main class="content">
-  <iframe
-    class="dashboard-frame"
-    src="https://app.powerbi.com/view?r=eyJrIjoiM2U2YTU3MmItZGVlZi00MGM1LTkzMTEtMTBiMzg0OGVhOWQwIiwidCI6IjI5ZTVlYTIwLWRhYWEtNDI5MS1hMmFlLTg3NGU2M2MxZjI5MiIsImMiOjEwfQ%3D%3D"
-    allowfullscreen>
-  </iframe>
-</main>
+    <iframe
+      class="dashboard-frame"
+      src="https://app.powerbi.com/view?r=eyJrIjoiM2U2YTU3MmItZGVlZi00MGM1LTkzMTEtMTBiMzg0OGVhOWQwIiwidCI6IjI5ZTVlYTIwLWRhYWEtNDI5MS1hMmFlLTg3NGU2M2MxZjI5MiIsImMiOjEwfQ%3D%3D"
+      allowfullscreen>
+    </iframe>
+  </main>
+
 </div>
+
+<!-- SCRIPT AUTO HIDE -->
+<script>
+const sidebar = document.getElementById("sidebar");
+const toggleBtn = document.getElementById("toggleBtn");
+const trigger = document.querySelector(".sidebar-trigger");
+
+let isClosed = false;
+
+// Klik tombol ☰
+toggleBtn.addEventListener("click", function() {
+  sidebar.classList.toggle("closed");
+  isClosed = sidebar.classList.contains("closed");
+});
+
+// Hover kiri layar
+trigger.addEventListener("mouseenter", function() {
+  if (isClosed) {
+    sidebar.classList.remove("closed");
+  }
+});
+
+// Keluar dari sidebar
+sidebar.addEventListener("mouseleave", function() {
+  if (isClosed) {
+    sidebar.classList.add("closed");
+  }
+});
+</script>
 
 </body>
 </html>
-
-
 
 
 
