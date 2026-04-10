@@ -4,9 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Portal TUBEL dan Ketenagakerjaan</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
+<script>
+
+function loadDashboard(jenis){
+
+const frame = document.getElementById("dashboardFrame");
+
+if(jenis === "mandiri"){
+frame.src="https://app.powerbi.com/view?r=eyJrIjoiM2U2YTU3MmItZGVlZi00MGM1LTkzMTEtMTBiMzg0OGVhOWQwIiwidCI6IjI5ZTVlYTIwLWRhYWEtNDI5MS1hMmFlLTg3NGU2M2MxZjI5MiIsImMiOjEwfQ%3D%3D&pageName=22076eac94967b603209";
+}
+
+if(jenis === "dibiayai"){
+frame.src="https://app.powerbi.com/view?r=eyJrIjoiM2U2YTU3MmItZGVlZi00MGM1LTkzMTEtMTBiMzg0OGVhOWQwIiwidCI6IjI5ZTVlYTIwLWRhYWEtNDI5MS1hMmFlLTg3NGU2M2MxZjI5MiIsImMiOjEwfQ%3D%3D&pageName=126f929e10418231ad32";
+}
+
+if(jenis === "ketenagakerjaan"){
+frame.src="https://app.powerbi.com/view?r=eyJrIjoiM2U2YTU3MmItZGVlZi00MGM1LTkzMTEtMTBiMzg0OGVhOWQwIiwidCI6IjI5ZTVlYTIwLWRhYWEtNDI5MS1hMmFlLTg3NGU2M2MxZjI5MiIsImMiOjEwfQ%3D%3D&pageName=89be73248fff7fbd674e";
+}
+
+}
+
+</script>
 <body>
 
 <script>
@@ -24,31 +45,44 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <button id="toggleBtn" style="background:none;border:none;color:white;font-size:22px;cursor:pointer;margin-right:10px;">☰</button>
-      <img src="https://pkpj.ac.id/wp-content/uploads/2023/10/kkp.png" alt="Logo KKP">
+      <img src="https://1.bp.blogspot.com/-x_XKQe2fBLo/YUSrZCN3xmI/AAAAAAAAG0U/f5yxOVigV6EcV7GLIR3QdBkbToqC8MbKgCLcBGAsYHQ/s1600/logo%2Bbaru%2Bkementrian%2Bkelautan%2Bdan%2Bperikanan%2BPNG%2B-%2Bkanalmu%2B.png" alt="Logo KKP">
       <span>Portal Pegawai KKP</span>
     </div>
 
     <nav class="sidebar-menu">
-      <a href="index.html">
-        <span>Beranda</span>
-      </a>
 
-      <a href="dashboard.html" class="active">
-        <span>Dashboard</span>
-      </a>
+  <ul>
 
-      <a href="petajabatan.html">
-        <span>Peta Jabatan</span>
-      </a>
-    </nav>
+    <li>
+      <a href="index.html">Beranda</a>
+    </li>
+
+    <li class="dropdown">
+      <a href="#">Dashboard ▾</a>
+
+      <ul class="dropdown-menu">
+       <li><a href="#" onclick="loadDashboard('mandiri')">Dashboard Tubel Mandiri</a></li>
+       <li><a href="#" onclick="loadDashboard('dibiayai')">Dashboard Tubel Dibiayai</a></li>
+       <li><a href="#" onclick="loadDashboard('ketenagakerjaan')">Dashboard Ketenagakerjaan</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="petajabatan.html">Peta Jabatan</a>
+    </li>
+
+  </ul>
+
+</nav>
   </aside>
 
   <!-- KONTEN -->
   <main class="content">
     <iframe
-      class="dashboard-frame"
-      src="https://app.powerbi.com/view?r=eyJrIjoiM2U2YTU3MmItZGVlZi00MGM1LTkzMTEtMTBiMzg0OGVhOWQwIiwidCI6IjI5ZTVlYTIwLWRhYWEtNDI5MS1hMmFlLTg3NGU2M2MxZjI5MiIsImMiOjEwfQ%3D%3D"
-      allowfullscreen>
+       id="dashboardFrame"
+       class="dashboard-frame"
+       src="https://app.powerbi.com/view?r=eyJrIjoiM2U2YTU3MmItZGVlZi00MGM1LTkzMTEtMTBiMzg0OGVhOWQwIiwidCI6IjI5ZTVlYTIwLWRhYWEtNDI5MS1hMmFlLTg3NGU2M2MxZjI5MiIsImMiOjEwfQ%3D%3D"
+       allowfullscreen>
     </iframe>
   </main>
 
@@ -85,7 +119,6 @@ sidebar.addEventListener("mouseleave", function() {
 
 </body>
 </html>
-
 
 
 
